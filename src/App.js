@@ -1,23 +1,97 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
+  var data = [
+    {
+      code: "7-1",
+      fault: "ECT ทำงานบกพร่อง (แรงเคลื่อนไฟฟ้าต่ำ)",
+      cause: "สตาร์ตติดยากที่อุณหภูมิต่ำ",
+    },
+    {
+      code: "7-2",
+      fault: "ECT ทำงานบกพร่อง (แรงเคลื่อนไฟฟ้าสูง)",
+      cause: "สตาร์ตติดยากที่อุณหภูมิต่ำ",
+    },
+    {
+      code: "8-1",
+      fault: "TP ทำงานบกพร่อง (แรงเคลื่อนไฟฟ้าต่ำ)",
+      cause: "การแร่งความเร็วของเครื่องยนต์ไม่ดีพอ",
+    },
+    {
+      code: "8-2",
+      fault: "TP ทำงานบกพร่อง (แรงเคลื่อนไฟฟ้าสูง)",
+      cause: "การแร่งความเร็วของเครื่องยนต์ไม่ดีพอ",
+    },
+    {
+      code: "11-1",
+      fault: "ตัวตรวจจับ VS ทำงานบอกพร่อง",
+      cause: "การแร่งความเร็วของเครื่องยนต์ไม่ดีพอ",
+    },
+    {
+      code: "12-1",
+      fault: "หัวฉีดทำงานบกพร่อง",
+      cause: "เครื่องยนต์สตาร์ทไม่ติด",
+    },
+    {
+      code: "21-1",
+      fault: "ตัวตรวจจับ O2 ทำงานบกพร่อง (แรงเคลื่อนไฟฟ้าต่ำ)",
+      cause: "เครื่องยนต์ทำงานได้ปกติ",
+    },
+    {
+      code: "21-2",
+      fault: "ตัวตรวจจับ O2 ทำงานบกพร่อง (แรงเคลื่อนไฟฟ้าสูง)",
+      cause: "เครื่องยนต์ทำงานได้ปกติ",
+    },
+    {
+      code: "33-2",
+      fault: "หน่วยความจำ EEPROM ในกล่อง ECM ผิดพลาด",
+      cause: "เครื่องยนต์เดินเบาไม่เรียบ",
+    },
+    {
+      code: "52-1",
+      fault: "ตัวตรวจจับ CKP ทำงานบกพร่อง",
+      cause: "เครื่องยนต์สตาร์ตไม่ติด",
+    },
+    {
+      code: "52-2",
+      fault: "อัลเทอร์เนเตอร์ทำงานบกพร่อง",
+      cause: "เครื่องยนต์สตาร์ตไม่ติด",
+    },
+    {
+      code: "82-2",
+      fault: "วาล์วโซเลนอยด์เดินเบารอบสูงทำงานบกพร่อง",
+      cause: "เครื่องยนต์ติดขัด สตาร์ตติดยาก",
+    },
+    {
+      code: "91-1",
+      fault: "วงจรของขดลวดปฐมภูมิคอยล์จุดระเบิดทำงานบกพร่อง",
+      cause: "เครื่องยนต์สตาร์ตไม่ติด",
+    },
+  ];
+
+  const item = (i) => {};
+
+  console.log(data);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <table>
+        <tr>
+          <th>รหัสข้อผิดพลาด</th>
+          <th>ความผิดปกติ</th>
+          <th>อาการ</th>
+        </tr>
+
+        {data.map((d) => {
+          return (
+            <tr>
+              <th>{d.code}</th>
+              <th>{d.fault}</th>
+              <th>{d.cause}</th>
+            </tr>
+          );
+        })}
+      </table>
     </div>
   );
 }
